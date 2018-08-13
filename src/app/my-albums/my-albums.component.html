@@ -1,3 +1,13 @@
 <p>
   my-albums works!
 </p>
+
+
+<div class="my-albums">
+  <ol>
+    <li *ngFor="let albumId of albumIds.data">
+      {{ albumId }}
+    </li>
+  </ol>
+  
+</div>

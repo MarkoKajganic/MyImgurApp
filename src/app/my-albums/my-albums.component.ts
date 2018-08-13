@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ImgurApiService } from '../imgur-api.service';
 
 @Component({
   selector: 'app-my-albums',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyAlbumsComponent implements OnInit {
 
-  constructor() { }
+  private albumIds;
+
+  constructor(private imgurService: ImgurApiService) { }
 
   ngOnInit() {
+    this.imgurService.getAlbumsIds()
+      .subscribe(data => {this.albumIds = data});
   }
 
 }
