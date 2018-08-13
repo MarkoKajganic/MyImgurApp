@@ -14,21 +14,20 @@ import { ImgurApiService } from './imgur-api.service';
   declarations: [
     AppComponent,
     MyAlbumsComponent,
-    HttpModule,
-    HttpClientModule,
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ImgurApiService,
+    HttpModule,
+    HttpClientModule,
   ],
 
   providers: [
-
+    ImgurApiService,
   ],
 
   bootstrap: [AppComponent]
-  
+
 })
 export class AppModule { }
