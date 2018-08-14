@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ImgurApiService } from './imgur-api.service';
 import { AlbumComponent } from './album/album.component';
 import { AlbumsComponent } from './albums/albums.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { AlbumsComponent } from './albums/albums.component';
     MyAlbumsComponent,
     AlbumComponent,
     AlbumsComponent,
+    FavoritesComponent,
   ],
 
   imports: [

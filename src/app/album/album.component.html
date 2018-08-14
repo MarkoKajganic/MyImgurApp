@@ -2,7 +2,9 @@
 
 
 <div *ngFor="let image of album.data.images">
-    <img src="{{image.link}}" height="300">
+    <img src="{{image.link}}" width="400">
+    <button (click)="favoriteImage(image.id)">Favrite this image</button>
+    <hr>
 </div>
 
 

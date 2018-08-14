@@ -11,8 +11,6 @@ export class AlbumComponent implements OnInit {
   id;
   album;
   
-
-
   constructor(private route: ActivatedRoute,
               private imgurService: ImgurApiService) { }
 
@@ -23,6 +21,11 @@ export class AlbumComponent implements OnInit {
         this.album = data;
       }, error => console.log('Could not load album' + albumId));
     });
+  }
+
+  favoriteImage(id) {
+    console.log('YO LAJKOVO SI SLIKU SA ID: ', id);
+    this.imgurService.favoriteImage(id);
   }
 
 }

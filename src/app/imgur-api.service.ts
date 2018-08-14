@@ -20,7 +20,17 @@ export class ImgurApiService {
 
   getAlbum(id): Observable<any> {
     let headers = new HttpHeaders().set('Authorization', 'Bearer 3620072df3d803fa82a4cc8796550d9b79bd2123');
-    return this.http.get(`${this.baseUrl}/3/account/MarkoKajganic/album/${id}`, {headers})
+    return this.http.get(`${this.baseUrl}/3/account/MarkoKajganic/album/${id}`, {headers});
+  }
+
+  favoriteImage(id): Observable<any> {
+    let headers = new HttpHeaders().set('Authorization', 'Bearer 3620072df3d803fa82a4cc8796550d9b79bd2123');
+    return this.http.post(`${this.baseUrl}/3/image/${id}/favorite`, {headers});
+  }
+
+  getFavoriteImages(): Observable<any> {
+    let headers = new HttpHeaders().set('Authorization', 'Bearer 3620072df3d803fa82a4cc8796550d9b79bd2123');
+    return this.http.get(`${this.baseUrl}/3/account/MarkoKajganic/favorites`, {headers})
   }
 
 }
