@@ -8,12 +8,16 @@ import { MyAlbumsComponent } from './my-albums/my-albums.component';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { ImgurApiService } from './imgur-api.service';
+import { AlbumComponent } from './album/album.component';
+import { AlbumsComponent } from './albums/albums.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MyAlbumsComponent,
+    AlbumComponent,
+    AlbumsComponent,
   ],
 
   imports: [

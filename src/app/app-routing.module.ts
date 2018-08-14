@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MyAlbumsComponent } from './my-albums/my-albums.component';
+import { AlbumComponent } from './album/album.component';
 
 
 const appRoutes: Routes = [
@@ -12,8 +13,11 @@ const appRoutes: Routes = [
   {
     path: 'myAlbums',
     component: MyAlbumsComponent,
- },
- 
+  },
+  {
+      path: 'album/:id',
+      component: AlbumComponent,
+  }
 
 ];
 
