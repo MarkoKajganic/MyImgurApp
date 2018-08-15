@@ -11,6 +11,8 @@ import { ImgurApiService } from './imgur-api.service';
 import { AlbumComponent } from './album/album.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { AddAlbumComponent } from './add-album/add-album.component';
+import { FormsModule }   from '@angular/forms';
 
 
 @NgModule({
@@ -20,6 +22,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
     AlbumComponent,
     AlbumsComponent,
     FavoritesComponent,
+    AddAlbumComponent,
   ],
 
   imports: [
@@ -27,6 +30,8 @@ import { FavoritesComponent } from './favorites/favorites.component';
     AppRoutingModule,
     HttpModule,
     HttpClientModule,
+    FormsModule,
+    
   ],
 
   providers: [

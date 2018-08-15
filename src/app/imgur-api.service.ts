@@ -35,5 +35,15 @@ export class ImgurApiService {
     return this.http.get(`${this.baseUrl}/3/account/MarkoKajganic/favorites`, {headers})
   }
 
+  addAlbum(album) {
+
+  }
+
+  deleteAlbum(id): Observable<any> {
+    console.log('yoyo evo u servisu u delte funkciji. ID:', id);
+    let headers = new HttpHeaders().set('Authorization', this.accessToken);
+    return this.http.delete(`${this.baseUrl}3/album/${id}`, {headers});
+  }
+
 }
 

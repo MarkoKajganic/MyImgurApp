@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ImgurApiService } from '../imgur-api.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-album',
@@ -12,6 +12,7 @@ export class AlbumComponent implements OnInit {
   album;
   
   constructor(private route: ActivatedRoute,
+              private router: Router,
               private imgurService: ImgurApiService) { }
 
   ngOnInit() {    
@@ -26,6 +27,12 @@ export class AlbumComponent implements OnInit {
   favoriteImage(id) {
     console.log('YO LAJKOVO SI SLIKU SA ID: ', id);
     this.imgurService.favoriteImage(id);
+  }
+
+  deleteAlbum(id) {
+    console.log('YOYO usao sam u ts. ID: ', id);
+    this.imgurService.deleteAlbum(id);
+    //this.router.navigateByUrl('/');
   }
 
 }

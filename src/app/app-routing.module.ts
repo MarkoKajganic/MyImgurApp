@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MyAlbumsComponent } from './my-albums/my-albums.component';
 import { AlbumComponent } from './album/album.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { AddAlbumComponent } from './add-album/add-album.component';
 
 
 const appRoutes: Routes = [
@@ -22,6 +23,10 @@ const appRoutes: Routes = [
   {
     path: 'favorites',
     component: FavoritesComponent,
+  },
+  {
+    path: 'addAlbum',
+    component: AddAlbumComponent,
   },
 
 ];

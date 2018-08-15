@@ -1,0 +1,16 @@
+<h1>Add new album</h1>
+
+<div class="container">
+
+  <form #albumForm="ngForm" (ngSubmit)="submit(album)">
+      <div class="form-group">
+          <label>Name</label>
+          <input #name="ngModel"  [(ngModel)]="album.title" name="title" type="text" class="form-control">
+      </div>
+
+      <div>
+          <button type="submit">Add Album</button>
+      </div>
+  </form>
+
+</div>
