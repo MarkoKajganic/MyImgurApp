@@ -84,6 +84,22 @@ export class ImgurApiService {
     });
   }
 
+  createComment(id, commentBody) {
+    //let headers = new HttpHeaders().set('Authorization', this.accessToken);
+    let body = `image_id=${id}&comment=${commentBody}`;
+
+    return this.http.post(`${this.baseUrl}/3/comment`, body, {
+      headers: new HttpHeaders({
+        'Authorization': this.accessToken,
+        'Content-Type': 'application/x-www-form-urlencoded'
+      })
+    }).subscribe(data => {
+        alert('comment added');
+      }, error => {
+          console.log(error);
+    });
+  }
+
 
 }
 

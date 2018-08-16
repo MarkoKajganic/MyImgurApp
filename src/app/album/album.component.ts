@@ -34,4 +34,9 @@ export class AlbumComponent implements OnInit {
     //this.router.navigateByUrl('/');
   }
 
+  submitComment(id, comment) {
+    console.log('EVO ME U .TS submitcomment ', id, comment);
+    this.imgurService.createComment(id, comment);
+  }
+
 }

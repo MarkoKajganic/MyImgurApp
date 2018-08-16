@@ -13,6 +13,22 @@
 </div>
 
 
+
+<form #commentForm="ngForm" (ngSubmit)="submitComment(album.data.id, comment)">
+        <div class="form-group">
+            <label>Post a comment</label>
+            <input #name="ngModel"  [(ngModel)]="comment" name="comment" type="text" class="form-control">
+        </div>
+  
+        <div>
+            <button type="submit">Post</button>
+        </div>
+</form>
+
+<hr>
+
+
+
 <app-comments></app-comments>
 
 
