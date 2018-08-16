@@ -56,5 +56,9 @@ export class ImgurApiService {
     return this.http.delete(`${this.baseUrl}3/album/${id}`, {headers});
   }
 
+  getComments(id) : Observable<any> {
+    let headers = new HttpHeaders().set('Authorization', this.accessToken);
+    return this.http.get(`${this.baseUrl}/3/gallery/${id}/comments`, {headers});
+  }
 }
 

@@ -13,6 +13,7 @@ import { AlbumsComponent } from './albums/albums.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { AddAlbumComponent } from './add-album/add-album.component';
 import { FormsModule }   from '@angular/forms';
+import { CommentsComponent } from './comments/comments.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { FormsModule }   from '@angular/forms';
     AlbumsComponent,
     FavoritesComponent,
     AddAlbumComponent,
+    CommentsComponent,
   ],
 
   imports: [
