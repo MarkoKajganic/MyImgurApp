@@ -31,12 +31,8 @@ export class AlbumComponent implements OnInit {
 
   deleteAlbum(id) {
     this.imgurService.deleteAlbum(id);
-    //this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/');
   }
-
-
-
-
 
   addImage(imageUrl) {
     this.id = this.route.params.subscribe(params => {
@@ -44,11 +40,6 @@ export class AlbumComponent implements OnInit {
       this.imgurService.addImageToAlbum(albumId, imageUrl);
     });
   }
-
-
-
-
-
 
   submitComment(id, comment) {
     console.log('EVO ME U .TS submitcomment ', id, comment);

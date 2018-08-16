@@ -33,7 +33,7 @@ export class ImgurApiService {
         'Content-Type': 'application/x-www-form-urlencoded'
       })
     }).subscribe(data => {
-        alert('album added');
+        alert('Album added');
       }, error => {
           console.log(error);
     });
@@ -47,7 +47,7 @@ export class ImgurApiService {
         'Content-Type': 'application/x-www-form-urlencoded'
       })
     }).subscribe(data => {
-        alert('image added');
+        alert('Image added');
       }, error => {
           console.log(error);
     });
@@ -59,7 +59,7 @@ export class ImgurApiService {
     let headers = new HttpHeaders().set('Authorization', this.accessToken);
     return this.http.delete(`${this.baseUrl}/3/album/${id}`, {headers})
     .subscribe(data => {
-      alert('ok');
+      alert('Album deleted');
     }, error => {
         console.log(error);
   });
@@ -75,7 +75,7 @@ export class ImgurApiService {
     let headers = new HttpHeaders().set('Authorization', this.accessToken);
     return this.http.post(`${this.baseUrl}/3/image/${id}/favorite`, {headers})
     .subscribe(data => {
-      alert('image added to favorites');
+      alert('Image added to favorites');
     }, error => {
         console.log(error);
     });
@@ -92,7 +92,7 @@ export class ImgurApiService {
     let headers = new HttpHeaders().set('Authorization', this.accessToken);
     return this.http.delete(`${this.baseUrl}/3/comment/${id}`, {headers})
     .subscribe(data => {
-      alert('comment deleted');
+      alert('Comment deleted');
     }, error => {
         console.log(error);
     });
@@ -106,7 +106,7 @@ export class ImgurApiService {
         'Content-Type': 'application/x-www-form-urlencoded'
       })
     }).subscribe(data => {
-        alert('comment added');
+        alert('Comment added');
       }, error => {
           console.log(error);
     });

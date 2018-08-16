@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ImgurApiService } from '../imgur-api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-album',
@@ -10,13 +11,15 @@ export class AddAlbumComponent implements OnInit {
 
   public album;
 
-  constructor(private imgurService: ImgurApiService) { }
+  constructor(private imgurService: ImgurApiService,
+              private router: Router) { }
 
   ngOnInit() {
   }
 
   submit(title, imageUrl) {
     this.imgurService.addAlbum(title);
+    this.router.navigateByUrl('/');
   }
 
 }

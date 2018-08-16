@@ -1,4 +1,11 @@
-h3, li {
+li, a {
     font-family: 'Patrick Hand', cursive;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: black;
+}
+
+h3 {
+    font-family: 'Permanent Marker', cursive;
     font-size: 2em;
 }
