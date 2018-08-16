@@ -1,5 +1,15 @@
-<h2>Album title: {{album.data.title}}</h2>
+<h1>Album title: {{album.data.title}}</h1>
 <h4>Album id: {{album.data.id}}</h4>
+
+<form #albumForm="ngForm" (ngSubmit)="addImage(imageUrl)">
+    <div class="form-group">
+        <label>Image Url</label>
+        <input #name="ngModel"  [(ngModel)]="imageUrl" name="imageUrl" type="text" class="form-control">
+    </div>
+    <button type="submit">Add Image to this album</button>
+</form>
+
+<br><br>
 
 <button (click)="deleteAlbum(album.data.id)"> Delete This Album</button>
 <button> Edit This Album</button>
@@ -7,7 +17,7 @@
 <hr>
 
 <div *ngFor="let image of album.data.images">
-    <img src="{{image.link}}" width="400">
+    <img src="{{image.link}}" width="550">
     <button (click)="favoriteImage(image.id)">Favrite this image</button>
     <hr>
 </div>
@@ -15,14 +25,14 @@
 
 
 <form #commentForm="ngForm" (ngSubmit)="submitComment(album.data.id, comment)">
-        <div class="form-group">
-            <label>Post a comment</label>
-            <input #name="ngModel"  [(ngModel)]="comment" name="comment" type="text" class="form-control">
-        </div>
-  
-        <div>
-            <button type="submit">Post</button>
-        </div>
+    <div class="form-group">
+        <label>Post a comment</label>
+        <input #name="ngModel"  [(ngModel)]="comment" name="comment" type="text" class="form-control">
+    </div>
+
+    <div>
+        <button type="submit">Post</button>
+    </div>
 </form>
 
 <hr>

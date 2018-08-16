@@ -15,9 +15,7 @@ export class AddAlbumComponent implements OnInit {
   ngOnInit() {
   }
 
-  submit(title) {
-    console.log('radi submit funkcija');
-    console.log(title);
+  submit(title, imageUrl) {
     this.imgurService.addAlbum(title);
   }
 

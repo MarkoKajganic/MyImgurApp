@@ -1,0 +1,18 @@
+.navbar li {
+    display: inline;
+    padding-right: 40px;
+    font-family: 'Permanent Marker', cursive;
+}    
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5em;
+}
+
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+    font-size: 2em;
+
+}    
