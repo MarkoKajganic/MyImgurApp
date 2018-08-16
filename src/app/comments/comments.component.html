@@ -1,6 +1,8 @@
 
 <div *ngFor="let comment of comments.data">
-  <p>Author: {{comment.author}}</p>
+  <p>Author: {{comment.author}} ||| comment id: {{comment.id}}</p>
   <p>Comment body: {{comment.comment}}</p>
-  <br>
+  <button (click)="deleteComment(comment.id)">Delete this comment</button>
+
+  <hr>
 </div>

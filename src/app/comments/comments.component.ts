@@ -24,4 +24,8 @@ export class CommentsComponent implements OnInit {
     });
   }
 
+  deleteComment(id) {
+    this.imgurService.deleteComment(id);
+  }
+
 }

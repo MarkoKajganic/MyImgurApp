@@ -13,7 +13,7 @@ export class ImgurApiService {
 
   constructor(private http: HttpClient) { }
 
- 
+ //CRUD ALBUMS
   getAlbumsIds(): Observable<any> {
     let headers = new HttpHeaders().set('Authorization', this.clientId);
     return this.http.get(`${this.baseUrl}/3/account/MarkoKajganic/albums/ids`, {headers})
@@ -25,16 +25,6 @@ export class ImgurApiService {
     return this.http.get(`${this.baseUrl}/3/account/MarkoKajganic/album/${id}`, {headers});
   }
 
-  favoriteImage(id): Observable<any> {
-    let headers = new HttpHeaders().set('Authorization', this.accessToken);
-    return this.http.post(`${this.baseUrl}/3/image/${id}/favorite`, {headers});
-  }
-
-  getFavoriteImages(): Observable<any> {
-    let headers = new HttpHeaders().set('Authorization', this.accessToken);
-    return this.http.get(`${this.baseUrl}/3/account/MarkoKajganic/favorites`, {headers})
-  }
-
   addAlbum(album){
     let body = `title=${album}`;
     return this.http.post(`${this.baseUrl}/3/album`, body, {
@@ -43,22 +33,57 @@ export class ImgurApiService {
         'Content-Type': 'application/x-www-form-urlencoded'
       })
     }).subscribe(data => {
-        alert('ok');
+        alert('album added');
       }, error => {
-          console.log(error.json());
+          console.log(error);
     });
 
   }
 
-  deleteAlbum(id): Observable<any> {
-    console.log('yoyo evo u servisu u delte funkciji. ID:', id);
+  deleteAlbum(id) {
+    console.log('logujem iz deleteAlbum funkcije u servisu!! ID:', id);
     let headers = new HttpHeaders().set('Authorization', this.accessToken);
-    return this.http.delete(`${this.baseUrl}3/album/${id}`, {headers});
+    return this.http.delete(`${this.baseUrl}/3/album/${id}`, {headers})
+    .subscribe(data => {
+      alert('ok');
+    }, error => {
+        console.log(error);
+  });
   }
 
+  //FAVORITES
+  getFavoriteImages() {
+    let headers = new HttpHeaders().set('Authorization', this.accessToken);
+    return this.http.get(`${this.baseUrl}/3/account/MarkoKajganic/favorites`, {headers});
+  }
+
+  favoriteImage(id) {
+    let headers = new HttpHeaders().set('Authorization', this.accessToken);
+    return this.http.post(`${this.baseUrl}/3/image/${id}/favorite`, {headers})
+    .subscribe(data => {
+      alert('image added to favorites');
+    }, error => {
+        console.log(error);
+    });
+  }
+
+  //COMMENTS
   getComments(id) : Observable<any> {
     let headers = new HttpHeaders().set('Authorization', this.accessToken);
     return this.http.get(`${this.baseUrl}/3/gallery/${id}/comments`, {headers});
   }
+
+  deleteComment(id) {
+    console.log('logujem iz deleteComment funkcije u servisu!! ID komentara je:', id)
+    let headers = new HttpHeaders().set('Authorization', this.accessToken);
+    return this.http.delete(`${this.baseUrl}/3/comment/${id}`, {headers})
+    .subscribe(data => {
+      alert('comment deleted');
+    }, error => {
+        console.log(error);
+    });
+  }
+
+
 }
 
