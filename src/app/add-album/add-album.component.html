@@ -2,10 +2,10 @@
 
 <div class="container">
 
-  <form #albumForm="ngForm" (ngSubmit)="submit(album)">
+  <form #albumForm="ngForm" (ngSubmit)="submit(title)">
       <div class="form-group">
-          <label>Name</label>
-          <input #name="ngModel"  [(ngModel)]="album.title" name="title" type="text" class="form-control">
+          <label>Title</label>
+          <input #name="ngModel"  [(ngModel)]="title" name="title" type="text" class="form-control">
       </div>
 
       <div>

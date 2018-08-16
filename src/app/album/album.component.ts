@@ -30,7 +30,6 @@ export class AlbumComponent implements OnInit {
   }
 
   deleteAlbum(id) {
-    console.log('YOYO usao sam u ts. ID: ', id);
     this.imgurService.deleteAlbum(id);
     //this.router.navigateByUrl('/');
   }

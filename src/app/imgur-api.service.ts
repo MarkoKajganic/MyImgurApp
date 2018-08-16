@@ -35,7 +35,18 @@ export class ImgurApiService {
     return this.http.get(`${this.baseUrl}/3/account/MarkoKajganic/favorites`, {headers})
   }
 
-  addAlbum(album) {
+  addAlbum(album){
+    let body = `title=${album}`;
+    return this.http.post(`${this.baseUrl}/3/album`, body, {
+      headers: new HttpHeaders({
+        'Authorization': this.accessToken,
+        'Content-Type': 'application/x-www-form-urlencoded'
+      })
+    }).subscribe(data => {
+        alert('ok');
+      }, error => {
+          console.log(error.json());
+    });
 
   }
 
