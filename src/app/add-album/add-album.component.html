@@ -5,7 +5,8 @@
   <form #albumForm="ngForm" (ngSubmit)="submit(title)">
       <div class="form-group">
           <label>Title</label>
-          <input #name="ngModel"  [(ngModel)]="title" name="title" type="text" class="form-control">
+          <input #name="ngModel" [(ngModel)]="title" name="title" type="text"
+           placeholder="Enter new title here" class="form-control">
       </div>
 
       <div>

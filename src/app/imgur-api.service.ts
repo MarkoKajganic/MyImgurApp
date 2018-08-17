@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import { environment } from '../environments/environment';
 
-
 @Injectable()
 export class ImgurApiService {
   baseUrl = environment.baseUrl;
@@ -51,11 +50,9 @@ export class ImgurApiService {
       }, error => {
           console.log(error);
     });
-
   }
 
   deleteAlbum(id) {
-    console.log('logujem iz deleteAlbum funkcije u servisu!! ID:', id);
     let headers = new HttpHeaders().set('Authorization', this.accessToken);
     return this.http.delete(`${this.baseUrl}/3/album/${id}`, {headers})
     .subscribe(data => {
@@ -82,13 +79,12 @@ export class ImgurApiService {
   }
 
   //COMMENTS
-  getComments(id) : Observable<any> {
+  getComments(id): Observable<any> {
     let headers = new HttpHeaders().set('Authorization', this.accessToken);
     return this.http.get(`${this.baseUrl}/3/gallery/${id}/comments`, {headers});
   }
 
   deleteComment(id) {
-    console.log('logujem iz deleteComment funkcije u servisu!! ID komentara je:', id)
     let headers = new HttpHeaders().set('Authorization', this.accessToken);
     return this.http.delete(`${this.baseUrl}/3/comment/${id}`, {headers})
     .subscribe(data => {
@@ -112,6 +108,16 @@ export class ImgurApiService {
     });
   }
 
+  vote(id, vote) {
+    let headers = new HttpHeaders().set('Authorization', this.accessToken);
+    return this.http.post(`${this.baseUrl}/3/comment/${id}/vote/${vote}`, {headers})
+    .subscribe(data => {
+      alert(`you voted ${vote}!`);
+    }, error => {
+        console.log(error);
+    });
+  }
+  
 
 }
 

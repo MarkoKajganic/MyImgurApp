@@ -1,8 +1,15 @@
-
 <div *ngFor="let comment of comments.data">
-  <p>Author: {{comment.author}} ||| comment id: {{comment.id}}</p>
-  <p>Comment body: {{comment.comment}}</p>
-  <button (click)="deleteComment(comment.id)">Delete this comment</button>
+    <p>Author: {{comment.author}} ||| comment id: {{comment.id}}</p>
+    <p> UP: {{comment.ups}} ||| DOWN: {{comment.downs}} ||| POINTS: {{comment.points}}</p>
 
-  <hr>
+    <button (click)="vote(comment.id, 'up')"> VoteUp</button>
+    <button (click)="vote(comment.id, 'down')"> VoteDown</button>
+
+    <p>COMMENT: {{comment.comment}}</p>
+
+    <div *ngIf="comment.author_id == 92269223">
+        <button (click)="deleteComment(comment.id)">Delete this comment</button>
+    </div>
+
+    <hr>
 </div>

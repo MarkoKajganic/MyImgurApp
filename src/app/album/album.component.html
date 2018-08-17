@@ -1,12 +1,13 @@
 <h1>Album title: {{album.data.title}}</h1>
-<h4>Album id: {{album.data.id}}</h4>
+<p>Album id: {{album.data.id}}<p>
+<p>Views: {{album.data.views}}<p>
 
 <form #albumForm="ngForm" (ngSubmit)="addImage(imageUrl)">
     <div class="form-group">
-        <label>Image Url</label>
-        <input #name="ngModel"  [(ngModel)]="imageUrl" name="imageUrl" type="text" class="form-control">
+        <input #name="ngModel"  [(ngModel)]="imageUrl" name="imageUrl"
+         placeholder="New imageURL here" type="text" class="form-control">
     </div>
-    <button type="submit">Add Image to this album</button>
+    <button type="submit">UPLOAD</button>
 </form>
 
 <br><br>
@@ -22,22 +23,17 @@
     <hr>
 </div>
 
-
-
+<!-- POST COMMENT FORM -->
 <form #commentForm="ngForm" (ngSubmit)="submitComment(album.data.id, comment)">
     <div class="form-group">
         <label>Post a comment</label>
         <input #name="ngModel"  [(ngModel)]="comment" name="comment" type="text" class="form-control">
     </div>
-
     <div>
         <button type="submit">Post</button>
     </div>
 </form>
-
 <hr>
-
-
 
 <app-comments></app-comments>
 

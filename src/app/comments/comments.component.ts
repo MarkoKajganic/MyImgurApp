@@ -28,4 +28,8 @@ export class CommentsComponent implements OnInit {
     this.imgurService.deleteComment(id);
   }
 
+  vote(id, vote) {
+    this.imgurService.vote(id, vote);
+  }
+
 }
