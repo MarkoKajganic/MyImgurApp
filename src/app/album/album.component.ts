@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AlbumComponent implements OnInit {
   id;
-  album;
+  album: object;
   
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -25,7 +25,6 @@ export class AlbumComponent implements OnInit {
   }
 
   favoriteImage(id) {
-    console.log('YO LAJKOVO SI SLIKU SA ID: ', id);
     this.imgurService.favoriteImage(id);
   }
 
@@ -42,7 +41,6 @@ export class AlbumComponent implements OnInit {
   }
 
   submitComment(id, comment) {
-    console.log('EVO ME U .TS submitcomment ', id, comment);
     this.imgurService.createComment(id, comment);
   }
 

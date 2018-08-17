@@ -1,11 +1,14 @@
 <h3>My Albums by name </h3>
 
 <div class="my-albums">
+
+<div *ngIf="albumIds">
   <ol>
     <li *ngFor="let albumId of albumIds.data">
       <app-albums albumId="{{ albumId }}"></app-albums>
     </li>
   </ol>
-  
+</div>  
+
 </div>
 

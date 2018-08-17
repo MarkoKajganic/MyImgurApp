@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AddAlbumComponent implements OnInit {
 
-  public album;
+  album: object;
 
   constructor(private imgurService: ImgurApiService,
               private router: Router) { }

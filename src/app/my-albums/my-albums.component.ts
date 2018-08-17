@@ -8,7 +8,7 @@ import { ImgurApiService } from '../imgur-api.service';
 })
 export class MyAlbumsComponent implements OnInit {
 
-  private albumIds;
+  albumIds: object;
 
   constructor(private imgurService: ImgurApiService) { }
 

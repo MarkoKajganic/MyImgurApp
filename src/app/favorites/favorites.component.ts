@@ -9,7 +9,7 @@ import { ImgurApiService } from '../imgur-api.service';
 export class FavoritesComponent implements OnInit {
 
   constructor(private imgurService: ImgurApiService) { }
-  favoriteImages;
+  favoriteImages: object;
 
   ngOnInit() {
     this.imgurService.getFavoriteImages().subscribe

@@ -7,8 +7,8 @@ import { ImgurApiService } from '../imgur-api.service';
   styleUrls: ['./albums.component.css']
 })
 export class AlbumsComponent implements OnInit {
-  @Input() albumId;
-  public album;
+  @Input() albumId: string;
+  album: object;
 
   constructor(private imgurService: ImgurApiService) { }
 

@@ -1,15 +1,19 @@
-<div *ngFor="let comment of comments.data">
-    <p>Author: {{comment.author}} ||| comment id: {{comment.id}}</p>
-    <p> UP: {{comment.ups}} ||| DOWN: {{comment.downs}} ||| POINTS: {{comment.points}}</p>
+<div *ngIf="comments">
 
-    <button (click)="vote(comment.id, 'up')"> VoteUp</button>
-    <button (click)="vote(comment.id, 'down')"> VoteDown</button>
+    <div *ngFor="let comment of comments.data">
+        <p>Author: {{comment.author}} ||| comment id: {{comment.id}}</p>
+        <p>UP: {{comment.ups}} ||| DOWN: {{comment.downs}} ||| POINTS: {{comment.points}}</p>
 
-    <p>COMMENT: {{comment.comment}}</p>
+        <button (click)="vote(comment.id, 'up')"> VoteUp</button>
+        <button (click)="vote(comment.id, 'down')"> VoteDown</button>
 
-    <div *ngIf="comment.author_id == 92269223">
-        <button (click)="deleteComment(comment.id)">Delete this comment</button>
+        <p>COMMENT: {{comment.comment}}</p>
+
+        <div *ngIf="comment.author_id == 92269223">
+            <button (click)="deleteComment(comment.id)">Delete this comment</button>
+        </div>
+
+        <hr>
     </div>
 
-    <hr>
 </div>

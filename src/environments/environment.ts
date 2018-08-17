@@ -7,6 +7,6 @@ export const environment = {
   production: false,
   baseUrl: 'https://api.imgur.com',
   clientId: 'Client-ID a8f49cff5adf72a',
-  acessToken: 'Bearer 838740b07aaadeaacae6e68f93a5de0f84572d66',
+  acessToken: 'Bearer f59db9b8e833fe04c7bafd1a5c525d74d10e93b4',
   
 };

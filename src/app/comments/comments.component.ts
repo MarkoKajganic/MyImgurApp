@@ -10,7 +10,7 @@ import { ImgurApiService } from '../imgur-api.service';
 })
 export class CommentsComponent implements OnInit {
   id;
-  comments;
+  comments: object;
 
   constructor(private route: ActivatedRoute,
               private imgurService: ImgurApiService) { }

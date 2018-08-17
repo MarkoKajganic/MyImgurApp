@@ -1,4 +1,5 @@
-<a routerLink="/album/{{album.data.id}}">
-  {{album.data.title}}
+<a *ngIf="album" routerLink="/album/{{album.data.id}}">
+    {{album.data.title}}
 </a>
+
 
